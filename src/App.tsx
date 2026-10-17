@@ -6,7 +6,7 @@ const field = "w-full rounded-lg border border-slate-300 bg-white px-3 py-2.5 te
 const btn = "rounded-lg px-3 py-2 text-sm font-semibold transition focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand";
 
 const defaultInputs: Inputs = {
-  pageName: "ArdhiMart",
+  pageName: "NextStation26",
   phone: "",
   product: "ইসলামিক ক্রিস্টাল শো-পিস (উচ্চতা: ৩.৫ ইঞ্চি, দৈর্ঘ্য ও প্রস্থ: ১.৫ ইঞ্চি, সম্পূর্ণ ক্রিস্টাল, উজ্জ্বলতা কখনো নষ্ট হবে না)।",
 };
@@ -28,6 +28,9 @@ export default function App() {
       const stored = localStorage.getItem("fbh-inputs");
       if (stored) {
         const parsed = JSON.parse(stored) as Inputs;
+        if (parsed.pageName === "ArdhiMart") {
+          parsed.pageName = "NextStation26";
+        }
         if (parsed && (parsed.product?.trim() || parsed.pageName?.trim())) {
           return parsed;
         }
@@ -89,7 +92,7 @@ export default function App() {
                   onClick={() => setInputs(defaultInputs)}
                   className="font-medium text-brand hover:underline cursor-pointer"
                 >
-                  ArdhiMart নমুনা
+                  NextStation26 নমুনা
                 </button>
                 <span className="text-slate-300">|</span>
                 <button
@@ -103,7 +106,7 @@ export default function App() {
             </div>
 
             <label className="block text-sm font-medium text-slate-700">পেজের নাম (Page Name)
-              <input className={`${field} mt-1`} value={inputs.pageName} onChange={set("pageName")} placeholder="যেমন: ArdhiMart" /></label>
+              <input className={`${field} mt-1`} value={inputs.pageName} onChange={set("pageName")} placeholder="যেমন: NextStation26" /></label>
             <label className="block text-sm font-medium text-slate-700">মোবাইল নাম্বার (Phone / Order)
               <input className={`${field} mt-1`} inputMode="tel" value={inputs.phone} onChange={set("phone")} placeholder="01XXXXXXXXX" /></label>
             <label className="block text-sm font-medium text-slate-700">পণ্যের বিবরণ (Product raw info)
