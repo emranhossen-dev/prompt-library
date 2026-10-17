@@ -68,7 +68,7 @@ export default function App() {
       <header className="flex flex-wrap items-center justify-between gap-3">
         <div>
           <h1 className="text-2xl font-bold sm:text-3xl text-slate-900">FB Post Helper</h1>
-          <p className="text-xs sm:text-sm text-slate-500 mt-0.5">১০ ধরনের প্রম্পট জেনারেটর • সম্পূর্ণ ইমোজি-মুক্ত ও ক্লিন ফরম্যাট</p>
+          <p className="text-xs sm:text-sm text-slate-500 mt-0.5">১০ ধরনের প্রম্পট জেনারেটর • কোড ব্লক ও ইমোজি মুক্ত • প্রতিটি পোস্টে হ্যাশট্যাগ</p>
         </div>
         <nav className="flex rounded-lg bg-white p-1 shadow-sm border border-slate-200" aria-label="Sections">
           {(["generate", "saved"] as const).map((t) => (
@@ -113,8 +113,9 @@ export default function App() {
               <textarea className={`${field} mt-1 min-h-36 leading-relaxed`} value={inputs.product} onChange={set("product")}
                 placeholder="নাম, মাপ, উপাদান, বিশেষত্ব, দাম..." /></label>
 
-            <div className="rounded-lg bg-blue-50/70 p-2.5 text-xs text-slate-700 border border-blue-100">
-              🛡️ <strong>কঠোর ইমোজি নিষেধাজ্ঞা:</strong> সবকটি প্রম্পটেই কোনো ধরনের ইউনিকোড ইমোজি (যেমন ✨, 🔥, 🚀, ইত্যাদি) ব্যবহার না করার স্পষ্ট শর্ত যুক্ত আছে।
+            <div className="rounded-lg bg-blue-50/70 p-2.5 text-xs text-slate-700 border border-blue-100 space-y-1">
+              <div>🛡️ <strong>ক্লিন কপি (নো-ইমোজি ও নো-কোডব্লক):</strong> কোড ব্লক (```) এবং ইমোজি মুক্ত সরাসরি পোস্ট উপযোগী ফরম্যাট।</div>
+              <div>🏷️ <strong>হ্যাশট্যাগ সহ:</strong> অরগানিক রিচ ও সার্চে খুঁজে পেতে প্রতিটি প্রম্পটেই বাংলা ও ইংরেজি হ্যাশট্যাগ যুক্ত।</div>
             </div>
           </section>
 
